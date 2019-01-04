@@ -1,16 +1,30 @@
 #include <stdio.h>
 
-
-char hi[3] = "Hi" ;
+int
+string_length(char * s) 
+{
+	int i = 0 ;
+	printf("%p\n", s) ;	
+	while (*s != 0x0) {
+		s += 1 ;
+		i += 1 ;
+	}
+	return i ;
+}
 
 int 
 main () 
 {
 	char a[6] = {'H', 'e', 'l', 'l', 'o', 0x0} ;
-	char * b = "Good Bye" ;
 	char c[20] = "Halla, Heba, Helloa" ;
+	char * b = "Good Bye" ;
 
-	printf("a: %s\n", a) ;
-	printf("b: %s\n", b) ;
-	printf("c: %s\n", c) ;
+	char d[2] = {0x0, 0x0} ;
+
+	//string_length(0x0) ;
+	string_length(d) ;
+
+	printf("%s %d\n", a, string_length(a)) ;
+	printf("%s %d\n", b, string_length(b)) ;
+	printf("%s %d\n", c, string_length(c)) ;
 }

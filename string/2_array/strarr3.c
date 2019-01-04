@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int 
-string_len(char * s)
+string_length(char * s)
 {
 	int i ;
 	for (i = 0 ; s[i] != 0x0 ; i++) ;
@@ -14,7 +14,7 @@ string_duplicate(char * orig)
 {
 	char * s ;
 	int i ;
-	s = (char *) malloc(sizeof(char) * (string_len(orig) + 1)) ;
+	s = (char *) malloc(sizeof(char) * (string_length(orig) + 1)) ;
 	for (i = 0 ; orig[i] != 0x0 ; i++)
 		s[i] = orig[i] ;
 	s[i] = 0x0 ;
@@ -26,7 +26,10 @@ int
 main() 
 {
 	int i ;
-	char * days[7] ;
+	char ** days ;
+
+	days = (char **) malloc(sizeof(char *) * 7) ;
+
 	days[0] = string_duplicate("Sunday") ; 
 	days[1] = string_duplicate("Monday") ;
 	days[2] = string_duplicate("Tuesday") ;
