@@ -54,6 +54,7 @@ remove_number(int num)
 			Node * nextnext = itr->next->next ;
 			free(itr->next) ;
 			itr->next = nextnext ;
+			break ;
 		}
 	}
 }
