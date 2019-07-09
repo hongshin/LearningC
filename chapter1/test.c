@@ -9,6 +9,7 @@
  {
  	printf("Hello \n" /* Not Hi */) ;
 	printf("C has two ways for users to write comments: /* */ and //\n") ;
+	printf("\"") ;
 	/*
 	End of program */
  }
