@@ -1,22 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define col(l) ((l) % 8)
+#define row(l) ((l) / 8)
+
 int b[8][8] ;
+
 int m[8][8] ;
-
 int n_findings = 0 ;
-
 unsigned long long first = 0 ;
-
-int col(int l)
-{
-	return l % 8 ;
-}
-
-int row(int l)
-{
-	return l / 8 ;
-}
 
 unsigned long long signature()
 {
@@ -99,11 +91,11 @@ print ()
 	for (y = 0 ; y < 8 ; y++) {
 		for (x = 0 ; x < 8 ; x++) 
 			printf("%d ", b[y][x]) ;
+		printf("\n") ;
 
 		/*printf("    ") ;
 		for (x = 0 ; x < 8 ; x++)
 			printf("%d ", m[y][x]) ;
-		printf("\n") ;
 		*/
 	}
 	printf("\n") ;
@@ -115,11 +107,9 @@ place (int n)
 	int i = 0 ;
 
 	if (n == 0) {
-		if (n_findings == 0) {
-			int x, y ;
+		if (first  == 0) {
 			print() ;
 			first = signature() ;
-			n_findings = 1 ;
 		}
 		else {
 			if (first != signature()) {
