@@ -14,7 +14,6 @@ main ()
 	state = OUT ;
 	while ((c = getchar()) != EOF) {
 		nc += 1 ;
-
 		if (c == '\n')
 			nl += 1 ;
 
