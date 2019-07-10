@@ -29,6 +29,7 @@ void
 combination (int * list, int n_list)
 {
 	int * gen = (int *) malloc(sizeof(int) * n_list) ;
+
 	_combination(list, n_list, gen, 0) ;
 }
 
