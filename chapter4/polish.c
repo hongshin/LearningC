@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-void push (int) ;
-int pop (int *) ;
+#include "stack.h"
 
 int 
 eval (char *s)
@@ -23,20 +22,26 @@ eval (char *s)
 		}
 		else if (*s == '+') {
 			int a, b ;
-			pop(&b) ;
-			pop(&a) ;
+			if (pop(&b) == 0) 
+				goto err ;
+			if (pop(&a) == 0) 
+				goto err ;
 			push(a + b) ;
 		}
 		else if (*s == '-') {
 			int a, b ;
-			pop(&b) ;
-			pop(&a) ;
+			if (pop(&b) == 0) 
+				goto err ;
+			if (pop(&a) == 0)
+				goto err ;
 			push(a - b) ;			
 		}
 		else if (*s == '*') {
 			int a, b ;
-			pop(&b) ;
-			pop(&a) ;
+			if (pop(&b) == 0)
+				goto err ;
+			if (pop(&a) == 0)
+				goto err ;
 			push(a * b) ;			
 		}
 		s += 1 ;
@@ -55,6 +60,9 @@ main ()
 	int i ;
 	char * s = "12 2 - 4 5 + *" ;
 
+	n_elem = 1 ;
+
 	i = eval(s) ;
+
 	printf("%d\n", i) ;
 }
