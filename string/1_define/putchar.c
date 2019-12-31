@@ -1,9 +1,12 @@
 #include <stdio.h>
 
 int 
-main()
+main ()
 {
 	putchar('H') ;
-	putchar('i') ;
+	putchar('e') ;
+	putchar('l') ;
+	putchar('l') ;
+	putchar('o') ;
 	putchar('\n') ;
 }

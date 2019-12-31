@@ -3,7 +3,10 @@
 void 
 print_string (char * s)
 {
-	// TODO: implement here
+	while (*s != 0x0) {
+		putchar(*s) ;
+		s += 1 ;
+	}
 }
 
 
