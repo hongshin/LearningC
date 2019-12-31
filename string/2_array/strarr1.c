@@ -5,8 +5,13 @@ main()
 {
 	int i ;
 	char days[7][10] = {
-		"Sunday", "Monday", "Tuesday", "Wednesday",
-		"Thursday", "Fraday", "Saturday" } ;
+		"Sunday", 
+		"Monday", 
+		"Tuesday", 
+		"Wednesday",
+		"Thursday", 
+		"Fraday", 
+		"Saturday" } ;
 
 	days[5][2] = 'i' ;
 

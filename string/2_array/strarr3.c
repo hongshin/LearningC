@@ -1,31 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-int 
-string_length(char * s)
-{
-	int i ;
-	for (i = 0 ; s[i] != 0x0 ; i++) ;
-	return i ;
-}
-
-char *
+char * 
 string_duplicate(char * orig) 
 {
-	char * s ;
+	char * t = 0x0 ;
 	int i ;
-	s = (char *) malloc(sizeof(char) * (string_length(orig) + 1)) ;
-	for (i = 0 ; orig[i] != 0x0 ; i++)
-		s[i] = orig[i] ;
-	s[i] = 0x0 ;
 
-	return s ;
+	t = (char *) malloc(sizeof(char) * (strlen(orig) + 1) ) ;
+
+	i = 0 ; 
+	do {
+		t[i] = orig[i] ;
+		i++ ;
+	} while(t[i - 1] != 0x0) ;
+
+	return t ;
 }
 
+
 int 
-main() 
+main () 
 {
 	int i ;
+
 	char ** days ;
 
 	days = (char **) malloc(sizeof(char *) * 7) ;
@@ -36,8 +35,9 @@ main()
 	days[3] = string_duplicate("Wednesday") ;
 	days[4] = string_duplicate("Thursday") ;
 	days[5] = string_duplicate("Fraday") ; 
-	days[6] = string_duplicate("Saturday") ;
-
+	//days[6] = string_duplicate("Saturday") ;
+	days[6] = strdup("Saturday") ;
+	
 	days[5][2] = 'i' ;
 
 	for (i = 0 ; i < 7 ; i++) 
