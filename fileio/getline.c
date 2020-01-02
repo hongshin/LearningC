@@ -1,6 +1,8 @@
 /* This code is public domain -- Will Hartung 4/9/09 */
 
-size_t getline(char **lineptr, size_t *n, FILE *stream) {
+size_t 
+getline (char **lineptr, size_t *n, FILE *stream) 
+{
     char *bufptr = NULL;
     char *p = bufptr;
     size_t size;
@@ -38,7 +40,8 @@ size_t getline(char **lineptr, size_t *n, FILE *stream) {
                 return -1;
             }
         }
-        *p++ = c;
+        *p = c;
+		p++ ;
         if (c == '\n') {
             break;
         }

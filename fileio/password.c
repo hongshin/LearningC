@@ -6,7 +6,8 @@ authenticated()
 	printf("Something secret!\n") ;
 }
 
-int string_eq(char * s1, char * s2)
+int  // 0: false, non-zero: true
+string_eq(char * s1, char * s2)
 {
 	while (*s1 != 0x0) {
 		if (*s1 != *s2) 
@@ -26,7 +27,7 @@ main()
 	int trial ;
 	for (trial = 0 ; trial < 3 ; trial++) {
 		printf("password: ") ;
-		fscanf(stdin, "%s", buf) ;
+		scanf("%15s", buf) ;
 		if (string_eq(buf, password)) {
 			authenticated() ;
 			break ;
