@@ -17,19 +17,9 @@ match (char * prefix, char * verse)
 int 
 main ()
 {
-	char prefix[16] ;
-	int  prefix_len ; 
+	char keyword[128] ;
 
-	char book[4] ;
-	int chapter ;
-	int verse ;
-
-	scanf("%3s", book) ;
-	scanf("%d", &chapter) ;
-	scanf("%d", &verse) ;
-	
-	snprintf(prefix, 16, "%s %d:%d ", book, chapter, verse) ;
-	prefix_len = strlen(prefix) ;
+	fscanf(stdin, "%127s", keyword) ;
 
 	FILE * fp = fopen("NIV.txt", "r") ;
 
@@ -40,9 +30,8 @@ main ()
 		int t ;
 		getline(&v, &v_len, fp) ;
 
-		if (strncmp(prefix, v, strlen(prefix)) == 0) {
+		if (strstr(v, keyword) != 0x0) {
 			printf("%s", v) ;
-			exit(0) ;
 		}
 	}
 	return 0 ;
