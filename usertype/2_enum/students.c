@@ -31,9 +31,7 @@ main()
 
 	sum = (int *) calloc(sizeof(int), N_Subjects) ;
 	
-	fp = fopen("students.csv", "r") ; 
-	
-	if (!fp)
+	if (!(fp = fopen("students.csv", "r")))
 		exit(1) ;
 
 	while (!feof(fp)) {
@@ -42,7 +40,7 @@ main()
 		size_t len = 0 ;
 
 		if (getline(&l, &len, fp) != -1) {
-			strtok(l, " ,\n") ;
+			printf("name:%s\n", strtok(l, " ,\n")) ;
 			for (i = 0 ; i < N_Subjects ; i++) {
 				char * tok = strtok(0x0, " ,\n") ;
 				sum[i] += atoi(tok) ;
@@ -55,7 +53,3 @@ main()
 	for (i = 0 ; i < N_Subjects ; i++)
 		printf("Avg. %s:%d\n", SubjectTitle[i], sum[i] / n_students) ;
 }
-
-
-
-

@@ -2,10 +2,10 @@
 #include <string.h>
 
 enum Subject {
-	Math,
-	Phys,
-	Engl,
-	Prog
+	Math, //0
+	Phys, //1
+	Engl, //2
+	Prog  //3
 	} ;
 
 char * SubjectName [] = {
@@ -18,6 +18,8 @@ char * SubjectName [] = {
 int
 main () 
 {
+	Subject s = Math ;
+
 	printf("%s\n", SubjectName[Math]) ;
 	printf("%s\n", SubjectName[Phys]) ;
 	printf("%s\n", SubjectName[Engl]) ;

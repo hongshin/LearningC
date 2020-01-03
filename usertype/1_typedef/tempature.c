@@ -18,11 +18,11 @@ FahrenheitToKelvin(Fahrenheit f)
 
 
 int 
-main()
+main ()
 {
 	Celsius a = 100 ;
 	Fahrenheit b = 100 ;
 
-	printf("%d\n", CelsiusToKelvin(c)) ;
-	printf("%d\n", FahrenheitToKelvin(a)) ;
+	printf("%d\n", CelsiusToKelvin(a)) ;
+	printf("%d\n", FahrenheitToKelvin(b)) ;
 }
