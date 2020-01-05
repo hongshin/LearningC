@@ -1,0 +1,6 @@
+5
+C4:horizontal:2
+C6:vertical:2
+D5:horizontal:3
+E4:vertical:2
+E2:vertical:2
