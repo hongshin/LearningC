@@ -38,7 +38,10 @@ char * op_str[N_op] = {
 
 int n_cars = 0 ;
 car_t * cars = 0x0 ;
-int cells[6][6] ;
+int cells[6][6] ; // cells[Y][X]
+// A6 -> cells[5][0]
+// F4 -> cells[3][5]
+// F1 -> cells[0][5]
 
 /* --- NOFIX */
 
