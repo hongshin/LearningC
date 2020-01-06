@@ -8,15 +8,16 @@ typedef struct {
 } Student ;
 
 void
-print_student(Student s) 
+print_student (Student s) 
 {
 	printf("%s, %d %f\n", s.name, s.num, s.gpa) ;
 }
 
 int 
-main()
+main ()
 {
 	Student s ;
+
 	s.name = strdup("Alexa") ;
 	s.num = 2392827 ;
 	s.gpa = 3.0 ;

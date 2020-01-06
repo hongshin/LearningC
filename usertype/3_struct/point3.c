@@ -1,9 +1,15 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct {
 	int x ;
 	int y ;
 } point ;
+
+typedef struct {
+	point * p1 ;
+	point * p2 ;
+} rect ;
 
 void
 print_point(point p)
@@ -12,20 +18,24 @@ print_point(point p)
 }
 
 point
-scale(point p, int s)
+scale (point p, int s)
 {
-	p.x *= s ;
-	p.y *= s ;
+	point r ; 
+	
+	r.x = p.x * s ;
+	r.y = p.y * s ;
 
-	return p ;
+	return r ;
 }
 
 void
-transpose(point * p)
+transpose (point * p)
 {
 	int t ;
-	t = p->x ;
-	p->x = p-> y;
+
+	t = p->x ; // t = *p.x ;
+
+	p->x = p->y;
 	p->y = t ;
 }
 
@@ -42,4 +52,12 @@ main()
 
 	transpose(&p2) ;
 	print_point(p2) ;
+
+	rect * r = (rect *) malloc(sizeof(rect)) ;
+	r->p1 = &p1 ;
+	r->p2 = &p2 ; 
+
+	printf("top-left point: (%d,%d)\n",
+		(r->p1)->x, (r->p1)->y) ;
+
 }

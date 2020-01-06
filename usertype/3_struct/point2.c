@@ -1,21 +1,35 @@
 #include <stdio.h>
 
-typedef struct _point {
+struct _point {
 	int x ;
 	int y ;
-} point ;
+} ;
+
+typedef 
+	struct _point 
+	point ;
+/*
+typedef 
+	struct {
+		int x ;
+		int y ;
+	} 
+	point ;
+*/
 
 void
-print_point(point p)
+print_point (point p) 
 {
 	printf("(%d, %d)\n", p.x, p.y) ;
-}
+} 
 
 int 
-main()
+main ()
 {
-	point p1 ;
-	struct _point p2 ;
+
+	point p1 = {0, 0} ;
+	point p2 = {0, 0} ;
+	//struct _point p2 ;
 
 	p1.x = 1 ;
 	p1.y = 1 ;
@@ -25,5 +39,5 @@ main()
 	//struct point p2 = {2, 2} ;
 
 	print_point(p1) ;
-	print_point(p2) ;
+	printf("%d\n", p1.x) ;
 }

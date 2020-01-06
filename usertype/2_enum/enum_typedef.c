@@ -1,6 +1,8 @@
 #include <stdio.h>
 
-typedef enum { e1, e2, e3, e4, e5 } Kind ;
+typedef 
+	enum { e1, e2, e3, e4, e5 } 
+	Kind ;
 
 int
 main()
