@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 
-enum Subject {
+typedef 
+enum {
 	Math, //0
 	Phys, //1
 	Engl, //2
 	Prog  //3
-	} ;
+	} Subject ;
 
 char * SubjectName [] = {
 	"Mathematics",

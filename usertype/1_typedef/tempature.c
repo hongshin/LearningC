@@ -23,6 +23,6 @@ main ()
 	Celsius a = 100 ;
 	Fahrenheit b = 100 ;
 
-	printf("%d\n", CelsiusToKelvin(a)) ;
+	printf("%d\n", CelsiusToKelvin(b)) ;
 	printf("%d\n", FahrenheitToKelvin(b)) ;
 }

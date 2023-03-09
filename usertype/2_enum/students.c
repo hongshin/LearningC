@@ -32,7 +32,7 @@ main()
 	sum = (int *) calloc(sizeof(int), N_Subjects) ;
 	
 	if (!(fp = fopen("students.csv", "r")))
-		exit(1) ;
+		exit(1) ; 
 
 	while (!feof(fp)) {
 		char * l = 0x0 ;

@@ -29,7 +29,9 @@ main ()
 	b->i = 2 ;
 	b->c = '0' ;
 
-	printf("%ld\n", (long) sizeof(struct compound)) ;
+	printf("%d\n", (int) sizeof(struct compound)) ;
+	printf("%d\n", (int) sizeof(unsigned short)) ;
+	printf("%d\n", (int) sizeof(char)) ;
 
 	print_mem((unsigned char *)&a, sizeof(a)) ;
 	print_mem((unsigned char *)b, sizeof(*b)) ;
