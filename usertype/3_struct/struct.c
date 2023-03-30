@@ -22,7 +22,7 @@ main ()
 	struct compound * b ;
 	int i ;
 
-	a.i = 1 ;
+	a.i = 256 ;
 	a.c = 'a' ;
 
 	b = (struct compound *) malloc(sizeof(struct compound)) ;
