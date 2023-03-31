@@ -21,25 +21,25 @@ char * read_a_line ()
 		while (!(end >= buf_n || !iscntrl(buf[end]))) {
 			end++ ;
 		}
-        if (curr < end && s != 0x0) {
-            curr = end ;
-            break ;
-        }
+		if (curr < end && s != 0x0) {
+			curr = end ;
+			break ;
+		}
 		curr = end ;
 		while (!(end >= buf_n || iscntrl(buf[end]))) {
 			end++ ;
 		}
-        if (curr < end) {
-		    if (s == 0x0) {
-			    s = strndup(buf + curr, end - curr) ;
-			    s_len = end - curr ;
-            }
-		    else {
-			    s = realloc(s, s_len + end - curr + 1) ;
-			    s = strncat(s, buf + curr, end - curr) ;
-			    s_len = s_len + end - curr ;
-            }
-        }
+		if (curr < end) {
+			if (s == 0x0) {
+				s = strndup(buf + curr, end - curr) ;
+				s_len = end - curr ;
+			}
+			else {
+				s = realloc(s, s_len + end - curr + 1) ;
+				s = strncat(s, buf + curr, end - curr) ;
+				s_len = s_len + end - curr ;
+			}
+		}
 		if (end < buf_n) {
 			curr = end + 1 ;
 			break ;
