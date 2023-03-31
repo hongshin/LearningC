@@ -11,7 +11,7 @@ char * read_a_line ()
 	static int buf_n = 0 ;
 	static int curr = 0 ;
 
-	if (feof(fp_niv))
+	if (feof(fp_niv) && curr == buf_n - 1)
 		return 0x0 ;
 
 	char * s = 0x0 ;
